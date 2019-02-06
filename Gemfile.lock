@@ -7,33 +7,54 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    airbrussh (1.3.1)
+      sshkit (>= 1.6.1, != 1.7.0)
+    capistrano (3.11.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.5.0)
+      capistrano (~> 3.1)
     coderay (1.1.2)
+    concurrent-ruby (1.1.4)
+    i18n (1.5.3)
+      concurrent-ruby (~> 1.0)
     json (2.1.0)
     method_source (0.9.2)
     mustermann (1.0.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.1.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    puma (3.12.0)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
-    ruby-pixels (0.0.1)
+    rake (12.3.2)
     sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
+    sshkit (1.18.2)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     tilt (2.0.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
+  capistrano-bundler
   json
   led_matrix!
   pry
-  ruby-pixels
+  puma
   sinatra
 
 BUNDLED WITH
-   1.17.1
+   1.17.3

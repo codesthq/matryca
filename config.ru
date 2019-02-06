@@ -1,5 +1,4 @@
 Bundler.require
-require 'pixels'
 
 require './app/my_app'
 require './app/services/frame_fetcher'
