@@ -18,6 +18,9 @@
               </div>
               <hr>
               <h3 class='frame-name'><%= picture[:name] %></h3>
+              <button class='btn btn-danger'>
+                <a href="/delete?frame_id=<%= picture[:frame_id] %>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+              </button>
             </a>
           </div>
         <% end %>
