@@ -50,6 +50,7 @@ class FrameForm {
   _initializePipette () {
     $(this.pipette).on('click', e => {
       this._initializeCollectColorEvent();
+      this._showNotification(this.pipette, 'Pick color from matrix', 'info', 'bottom');
     })
   }
 
@@ -84,12 +85,14 @@ class FrameForm {
   _saveData () {
     var path = '/new';
     this._sendRequest(this._readData(), path);
+    this._showNotification(this.saveDataButton, 'Image has been saved!', 'success', 'top');
   }
 
   _showData () {
     var data = this._readData();
     var path = '/show';
     this._sendRequest(data, path);
+    this._showNotification(this.showDataButton, 'Image has been sent to matrix!', 'success', 'top');
   }
 
   _applyData (element) {
@@ -135,5 +138,9 @@ class FrameForm {
 
   _readName () {
     return $('#name').val()
+  }
+
+  _showNotification (element, message, type, localization = 'top') {
+    $(element).notify(message ,{ className: type, position: localization })
   }
 }
