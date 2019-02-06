@@ -2,7 +2,7 @@ class MatrixUploadService
   attr_reader :frame, :led_matrix, :frame_array
   def initialize(frame_array)
     @frame = LedMatrix::Frame.new
-    @led_matrix = LedMatrix::Client.new('192.168.1.56', 3000)
+    @led_matrix = LedMatrix::Client.new('localhost', 3000)
     @frame_array = frame_array
   end
 
