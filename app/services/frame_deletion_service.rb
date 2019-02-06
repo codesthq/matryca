@@ -5,6 +5,16 @@ class FrameDeletionService
   end
 
   def call
-    File.delete(Dir.glob("data/#{id}?.json").first)
+    delete_frame
+  end
+
+  private
+
+  def delete_frame
+    File.delete(path)
+  end
+
+  def path
+    @path ||= Dir.glob("data/#{id}*.json").first
   end
 end
