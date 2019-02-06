@@ -1,3 +1,4 @@
 /data
 app/.DS_STORE
 .DS_STORE
+log/capistrano.log
