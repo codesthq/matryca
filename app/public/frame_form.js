@@ -55,7 +55,7 @@ class FrameForm {
   }
 
   _initializeCollectColorEvent () {
-    this._setCursor('url(/pipette.png), auto');
+    this._setCursor('url(/pipette_cursor.png), auto');
     $(this.cells).unbind();
     $(this.cells).on('click', e => {
       this._collectColor(e);
