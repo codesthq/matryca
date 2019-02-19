@@ -7,6 +7,7 @@ gem 'pry'
 gem 'rack-contrib'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'puma'
 
 group :development do
   gem 'capistrano'

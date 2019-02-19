@@ -23,7 +23,7 @@ set :deploy_to, '/home/pi'
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "data"
-set :puma_restart_command, 'source ~/.asdf/asdf.sh; bundle exec puma'
+set :asdf_map_ruby_bins, %w{ rake gem bundle ruby puma pumactl }
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

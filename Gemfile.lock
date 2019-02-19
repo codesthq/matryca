@@ -75,6 +75,7 @@ DEPENDENCIES
   json
   led_matrix!
   pry
+  puma
   rack-contrib
   sinatra
   sinatra-contrib
