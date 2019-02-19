@@ -10,6 +10,7 @@ gem 'sinatra-contrib'
 
 group :development do
   gem 'capistrano'
+  gem 'capistrano-asdf'
   gem 'capistrano-bundler'
   gem 'capistrano3-puma'
 end
