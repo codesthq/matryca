@@ -1,4 +1,8 @@
+require 'sinatra/json'
+
 class MyApp < Sinatra::Base
+  use Rack::PostBodyContentTypeParser
+
   get '/' do
     @saved_pictures = SavedFramesFetcher.new.call
     erb :'index.html'
@@ -26,5 +30,12 @@ class MyApp < Sinatra::Base
   get '/delete' do
     FrameDeletionService.new(params[:frame_id]).call
     redirect '/'
+  end
+
+  post '/graphql' do
+    json MatrixAppSchema.execute(
+      params[:query],
+      variables: params[:variables],
+    )
   end
 end

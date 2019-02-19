@@ -26,6 +26,6 @@ class MatrixUploadService
   end
 
   def picture_data
-    @picture_data ||= JSON.parse(frame_array)
+    @picture_data ||= frame_array.is_a?(String) ? JSON.parse(frame_array) : frame_array
   end
 end

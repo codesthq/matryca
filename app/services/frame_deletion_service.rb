@@ -11,7 +11,9 @@ class FrameDeletionService
   private
 
   def delete_frame
+    return unless path && File.exist?(path)
     File.delete(path)
+    true
   end
 
   def path

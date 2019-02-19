@@ -1,5 +1,6 @@
 Bundler.require
 
+require './app/graphql/schema'
 require './app/my_app'
 require './app/services/frame_fetcher'
 require './app/services/matrix_save_service'

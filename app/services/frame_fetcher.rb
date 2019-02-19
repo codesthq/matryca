@@ -14,6 +14,7 @@ class FrameFetcher
   private
 
   def frame
+    return unless path && File.exist?(path)
     YAML.safe_load(File.open(path))
   end
 
